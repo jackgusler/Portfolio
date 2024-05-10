@@ -15,3 +15,11 @@ code {
 .nav-brand, .nav-link {
   cursor: pointer;
 }
+
+.App .container {
+  background: transparent;
+}
+
+.Home, .About, .Projects, .Contact {
+  background: transparent;
+}
