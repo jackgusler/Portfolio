@@ -24,7 +24,7 @@ const PortfolioBackground = (props) => {
     class Star {
       constructor() {
         this.reset();
-        this.radius = p.random(1, 10);
+        this.radius = p.random(1, 5);
         this.shrinkTime = 0;
         this.respawning = p.random(1) < 0.5;
       }
@@ -48,7 +48,7 @@ const PortfolioBackground = (props) => {
         }
         if (this.respawning) {
           this.radius += this.shrinkRate;
-          if (this.radius >= 10) {
+          if (this.radius >= 5) {
             this.respawning = false;
           }
         } else {
@@ -79,7 +79,9 @@ const PortfolioBackground = (props) => {
     };
 
     p.draw = () => {
-      p.background(10);
+      // Create a gradient background with purple, blue, and black
+      p.background(240, 100, 10);
+
       stars.forEach((s) => {
         s.update();
         s.show();
