@@ -1,23 +1,26 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import p5 from "p5";
 
 const PortfolioBackground = (props) => {
-  let myP5;
   let stars = [];
   let count;
 
   const myRef = useRef();
+  const myP5 = useRef();
+
+  let sketch = useCallback((p) => {
+    // Your sketch function here...
+  }, []); // Include any dependencies of the sketch function here
 
   useEffect(() => {
-    myP5 = new p5(sketch, myRef.current);
+    myP5.current = new p5(sketch, myRef.current);
 
-    // Cleanup function
     return () => {
-      myP5.remove();
+      myP5.current.remove();
     };
-  }, []);
+  }, [sketch]);
 
-  const sketch = (p) => {
+  sketch = (p) => {
     class Star {
       constructor() {
         this.reset();
@@ -68,7 +71,7 @@ const PortfolioBackground = (props) => {
     p.setup = () => {
       p.createCanvas(p.windowWidth, p.windowHeight);
       p.colorMode(p.HSB, 360, 100, 100);
-      count = Math.floor((p.width + p.height) / 50);
+      count = Math.floor((p.width + p.height) / 20);
 
       for (let i = 0; i < count; i++) {
         stars.push(new Star());
@@ -82,33 +85,35 @@ const PortfolioBackground = (props) => {
         s.show();
       });
 
-      handleMouseMove();
+      // if count changes, add or remove stars
+      let newCount = Math.floor((p.width + p.height) / 20);
+      if (newCount > count) {
+        for (let i = count; i < newCount; i++) {
+          stars.push(new Star());
+        }
+      } else if (newCount < count) {
+        stars.splice(newCount);
+      }
+      count = newCount;
     };
 
     p.windowResized = () => {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
     };
-
-    function handleMouseMove() {
-      let radius = 1000;
-      let steps = 25;
-      for (let i = 0; i < steps; i++) {
-        let interp = p.map(i, 0, steps - 1, 0, 1);
-        let colorValue = p.lerpColor(p.color(25), p.color(255), interp);
-        p.fill(colorValue, 0, 10);
-        let circleRadius = p.map(i, 0, steps - 1, radius, 0);
-        p.circle(p.mouseX, p.mouseY, circleRadius);
-      }
-    }
   };
 
   return (
     <div
       ref={myRef}
-      id="canvas-container"
-      className="portfolio-background"
-      style={props.style}
-    ></div>
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: -1,
+      }}
+    >
+      {props.children}
+    </div>
   );
 };
 
