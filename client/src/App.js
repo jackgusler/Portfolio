@@ -14,10 +14,10 @@ function App() {
       {/* <PortfolioBackground /> */}
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col-12 col-md-6">
             <Navbar />
           </div>
-          <div className="col">
+          <div className="col-12 col-md-6">
             <About />
             <Skills />
             <Projects />

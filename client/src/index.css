@@ -18,3 +18,12 @@ code {
 .nav-link {
   cursor: pointer;
 }
+
+@media (min-width: 768px) {
+  .justify-content-md-between {
+    justify-content: space-between !important;
+  }
+  .min-vh-md-100 {
+    min-height: 100vh !important;
+  }
+}

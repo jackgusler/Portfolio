@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Card } from "react-bootstrap";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const Skills = () => {
-  const skills = [
+  const allSkills = [
     // Languages
     {
       name: "JavaScript",
@@ -24,10 +26,10 @@ const Skills = () => {
     { name: "SQLite", logo: "https://simpleicons.org/icons/sqlite.svg" },
     // Cloud Services
     {
-      name: "AWS DynamoDB",
+      name: "DynamoDB",
       logo: "https://simpleicons.org/icons/amazondynamodb.svg",
     },
-    { name: "AWS Lambda", logo: "https://simpleicons.org/icons/awslambda.svg" },
+    { name: "Lambda", logo: "https://simpleicons.org/icons/awslambda.svg" },
     // Version Control
     { name: "Git", logo: "https://simpleicons.org/icons/git.svg" },
     { name: "GitHub", logo: "https://simpleicons.org/icons/github.svg" },
@@ -37,32 +39,44 @@ const Skills = () => {
     { name: "Jira", logo: "https://simpleicons.org/icons/jira.svg" },
   ];
 
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   return (
-    <Container>
+    <div id="skills" className="container">
       <h2>Skills</h2>
-      <div>
-        Left
-        <Card
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            overflowX: "auto",
-            maxWidth: "50px",
-          }}
-        >
-          {skills.map((skill) => (
-            <Card.Body style={{ flex: "0 0 auto" }}>
-              <Card.Img
-                src={skill.logo}
-                style={{ width: "50px", height: "50px" }}
-              />
-              <Card.Title>{skill.name}</Card.Title>
-            </Card.Body>
+      <div style={{ maxWidth: "100%" }}>
+        <Carousel responsive={responsive} infinite={true}>
+          {allSkills.map((skill) => (
+            <div className="item">
+              <div className="d-flex flex-column align-items-center">
+                <img
+                  src={skill.logo}
+                  style={{ width: "50px", height: "50px" }}
+                />
+                <h5>{skill.name}</h5>
+              </div>
+            </div>
           ))}
-        </Card>
-        Right
+        </Carousel>
       </div>
-    </Container>
+    </div>
   );
 };
 
