@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Container, Card } from "react-bootstrap";
+import React, { useRef } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -54,30 +53,79 @@ const Skills = () => {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1,
+      items: 2,
     },
   };
 
+  const carouselRef = useRef(null);
+
+  const onNextClick = () => {
+    carouselRef.current.next();
+  };
+
+  const onPrevClick = () => {
+    carouselRef.current.previous();
+  };
+
   return (
-    <div id="skills" className="container">
-      <h2>Skills</h2>
-      <div style={{ maxWidth: "100%" }}>
-        <Carousel responsive={responsive} infinite={true}>
-          {allSkills.map((skill) => (
-            <div className="item">
-              <div className="d-flex flex-column align-items-center">
-                <img
-                  src={skill.logo}
-                  style={{ width: "50px", height: "50px" }}
-                />
-                <h5>{skill.name}</h5>
-              </div>
+  <div
+    id="skills"
+    className="container"
+    style={{ position: "relative", padding: "0 60px" }}
+  >
+    <i
+      onClick={onPrevClick}
+      style={{
+        position: "absolute",
+        left: "10px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        cursor: "pointer",
+      }}
+    >
+      <i className="fas fa-chevron-left fa-2x"></i>
+    </i>
+    <div className="carousel-container" style={{ maxWidth: "100%" }}>
+      <Carousel
+        responsive={responsive}
+        infinite={true}
+        ref={carouselRef}
+        showDots={false}
+        arrows={false}
+        removeArrowOnDeviceType={[
+          "tablet",
+          "mobile",
+          "desktop",
+          "superLargeDesktop",
+        ]}
+      >
+        {allSkills.map((skill) => (
+          <div className="item">
+            <div className="d-flex flex-column align-items-center">
+              <img
+                src={skill.logo}
+                style={{ width: "50px", height: "50px" }}
+              />
+              <h5>{skill.name}</h5>
             </div>
-          ))}
-        </Carousel>
-      </div>
+          </div>
+        ))}
+      </Carousel>
     </div>
-  );
+    <i
+      onClick={onNextClick}
+      style={{
+        position: "absolute",
+        right: "10px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        cursor: "pointer",
+      }}
+    >
+      <i className="fas fa-chevron-right fa-2x"></i>
+    </i>
+  </div>
+);
 };
 
 export default Skills;

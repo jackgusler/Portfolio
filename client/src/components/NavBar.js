@@ -3,14 +3,9 @@ import { Link } from "react-scroll";
 
 const NavBar = () => {
   return (
-    <div className="d-flex flex-column justify-content-md-between min-vh-md-100">
+    <div className="d-flex flex-column justify-content-md-between min-vh-md-100 sticky-top">
       <div>
         <div className="header py-5">
-          <h1 className="nav-brand">Jack Gusler</h1>
-          <h2>Software Engineer</h2>
-          <p>A little bio about myself...</p>
-        </div>
-        <div className="content d-none d-md-block">
           <Link
             activeClass="active"
             to="about"
@@ -18,32 +13,50 @@ const NavBar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="nav-link"
+            className="nav-brand display-1"
+            style={{ textDecoration: "none", color: "inherit" }}
           >
-            About
+            Jack Gusler
           </Link>
-          <Link
-            activeClass="active"
-            to="skills"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="nav-link"
-          >
-            Skills
-          </Link>
-          <Link
-            activeClass="active"
-            to="projects"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="nav-link"
-          >
-            Projects
-          </Link>
+          <h3>Software Engineer</h3>
+          <p>A little bio about myself...</p>
+        </div>
+        <div className="content d-none d-md-block">
+          <div style={{ width: "75px", textAlign: "left" }}>
+            <Link
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="nav-link"
+            >
+              About
+            </Link>
+            <Link
+              activeClass="active"
+              to="skills"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="nav-link"
+            >
+              Skills
+            </Link>
+            <Link
+              activeClass="active"
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="nav-link"
+            >
+              Projects
+            </Link>
+          </div>
         </div>
       </div>
       <div className="footer py-0 py-md-5">

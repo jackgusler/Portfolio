@@ -1,22 +1,19 @@
 * {
-  font-family: 'Inter', sans-serif;
-  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  font-family: "Inter", sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @supports (font-variation-settings: normal) {
-  * { font-family: 'InterVariable', sans-serif; }
+  * {
+    font-family: "InterVariable", sans-serif;
+  }
 }
 
 code {
-  font-family: 'Inter', source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: "Inter", source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.nav-brand,
-.nav-link {
-  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -26,4 +23,116 @@ code {
   .min-vh-md-100 {
     min-height: 100vh !important;
   }
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container::before,
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+}
+
+.carousel-container::after {
+  right: 0;
+  top: 0;
+  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+}
+
+.card {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-hovered .card:not(:hover) {
+  opacity: 0.4;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  color: #343a40;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 50px;
+  background-color: #bebebe;
+  color: #000000;
+  font-size: 14px;
+  font-weight: bold; /* make the font bold */
+}
+
+.nav-brand,
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 0;
+  transition: color 0.3s;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link:hover::before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.nav-link.active::before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
