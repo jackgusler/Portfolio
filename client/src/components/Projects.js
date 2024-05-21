@@ -10,8 +10,11 @@ const handleMouseLeave = (e) => {
 
 const Projects = () => {
   return (
-    <div id="projects" className="container my-5">
-      <div className="row mt-5">
+    <div id="projects" className="container pb-5">
+      <h2 className="pb-3" style={{}}>
+        Projects
+      </h2>
+      <div className="row">
         <div className="col-12">
           <div
             className="card project-card mb-4"
@@ -26,17 +29,15 @@ const Projects = () => {
               <p className="card-text">
                 Implemented Scrum framework with Atlassian’s Jira and Git
                 Version control for software development for the Hudson Valley
-                Advanced Manufacturing Center. Utilized web sockets to monitor
-                progress, time, and temperature for concurrent printing jobs,
-                enhancing operational visibility and efficiency. Secured an
-                AYURE grant for a team consisting of three students. Designed
-                using Model-View-Controller pattern, integrating multi-threading
-                and web sockets for front-end to back-end communication for an
-                array of 3D printers.
+                Advanced Manufacturing Center. Designed using
+                Model-View-Controller pattern, integrating multi-threading and
+                web sockets for front-end to back-end communication for an array
+                of 3D printers.
               </p>
               <div className="card-skills">
                 <span className="skill-tag">Vue.js</span>
                 <span className="skill-tag">Bootstrap</span>
+                <span className="skill-tag">Node.js</span>
                 <span className="skill-tag">Flask</span>
                 <span className="skill-tag">SQLite</span>
                 <span className="skill-tag">Jira</span>
@@ -63,13 +64,13 @@ const Projects = () => {
                 functionalities for tracking expenses, setting goals, and
                 visualizing data. Integrated AWS DynamoDB to store and oversee
                 user data for the web-based platform, enhancing system
-                efficiency and performance. Supervised the entire deployment and
-                hosting of a dynamic web application, leveraging AWS Lambda
-                functions for scalability and cost-effectiveness.
+                efficiency and performance, hosting it via AWS Lambda functions
+                for scalability and cost-effectiveness.
               </p>
               <div className="card-skills">
                 <span className="skill-tag">Vue.js</span>
                 <span className="skill-tag">Bulma</span>
+                <span className="skill-tag">Node.js</span>
                 <span className="skill-tag">Express.js</span>
                 <span className="skill-tag">AWS DynamoDB</span>
                 <span className="skill-tag">AWS Lambda</span>
@@ -79,7 +80,7 @@ const Projects = () => {
         </div>
         <div className="col-12">
           <div
-            className="card project-card mb-4"
+            className="card project-card"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -89,20 +90,16 @@ const Projects = () => {
                 January 2023 — May 2023
               </h6>
               <p className="card-text">
-                Deployed Vue.js, Bulma, Express.js, and MongoDB technologies to
-                develop a robust and efficient system, hosting the application
-                on Render. Employed Agile and Scrum methodologies to manage the
-                development process, ensuring rapid iterations and timely
-                delivery of high-caliber software. Contributed significantly to
-                a collaborative team effort in developing an innovative Point of
-                Sale (POS) system. Produced detailed system architecture
-                diagrams and documented project work comprehensively,
-                facilitating smooth comprehension and knowledge transfer among
-                team members.
+                Contributed significantly to a collaborative team effort in
+                developing an innovative Point of Sale (POS) system. Produced
+                detailed system architecture diagrams and documented project
+                work, facilitating smooth comprehension and knowledge transfer
+                among team members.
               </p>
               <div className="card-skills">
                 <span className="skill-tag">Vue.js</span>
                 <span className="skill-tag">Bulma</span>
+                <span className="skill-tag">Node.js</span>
                 <span className="skill-tag">Express.js</span>
                 <span className="skill-tag">MongoDB</span>
                 <span className="skill-tag">Render</span>

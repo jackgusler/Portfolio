@@ -68,64 +68,70 @@ const Skills = () => {
   };
 
   return (
-  <div
-    id="skills"
-    className="container"
-    style={{ position: "relative", padding: "0 60px" }}
-  >
-    <i
-      onClick={onPrevClick}
-      style={{
-        position: "absolute",
-        left: "10px",
-        top: "50%",
-        transform: "translateY(-50%)",
-        cursor: "pointer",
-      }}
-    >
-      <i className="fas fa-chevron-left fa-2x"></i>
-    </i>
-    <div className="carousel-container" style={{ maxWidth: "100%" }}>
-      <Carousel
-        responsive={responsive}
-        infinite={true}
-        ref={carouselRef}
-        showDots={false}
-        arrows={false}
-        removeArrowOnDeviceType={[
-          "tablet",
-          "mobile",
-          "desktop",
-          "superLargeDesktop",
-        ]}
+    <div id="skills" className="container pb-5">
+      <h2 className="pb-3" style={{}}>
+        Skills
+      </h2>
+      <div
+        style={{
+          padding: "0 60px",
+          position: "relative",
+        }}
       >
-        {allSkills.map((skill) => (
-          <div className="item">
-            <div className="d-flex flex-column align-items-center">
-              <img
-                src={skill.logo}
-                style={{ width: "50px", height: "50px" }}
-              />
-              <h5>{skill.name}</h5>
-            </div>
-          </div>
-        ))}
-      </Carousel>
+        <i
+          onClick={onPrevClick}
+          style={{
+            position: "absolute",
+            left: "10px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            cursor: "pointer",
+          }}
+        >
+          <i className="fas fa-chevron-left fa-2x"></i>
+        </i>
+        <div className="carousel-container" style={{ maxWidth: "100%" }}>
+          <Carousel
+            responsive={responsive}
+            infinite={true}
+            ref={carouselRef}
+            showDots={false}
+            arrows={false}
+            removeArrowOnDeviceType={[
+              "tablet",
+              "mobile",
+              "desktop",
+              "superLargeDesktop",
+            ]}
+          >
+            {allSkills.map((skill) => (
+              <div className="item">
+                <div className="d-flex flex-column align-items-center">
+                  <img
+                    src={skill.logo}
+                    style={{ width: "50px", height: "50px" }}
+                  />
+                  <h5>{skill.name}</h5>
+                </div>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+        <i
+          onClick={onNextClick}
+          style={{
+            position: "absolute",
+            right: "10px",
+            top: "65%",
+            transform: "translateY(-50%)",
+            cursor: "pointer",
+          }}
+        >
+          <i className="fas fa-chevron-right fa-2x"></i>
+        </i>
+      </div>
     </div>
-    <i
-      onClick={onNextClick}
-      style={{
-        position: "absolute",
-        right: "10px",
-        top: "50%",
-        transform: "translateY(-50%)",
-        cursor: "pointer",
-      }}
-    >
-      <i className="fas fa-chevron-right fa-2x"></i>
-    </i>
-  </div>
-);
+  );
 };
 
 export default Skills;

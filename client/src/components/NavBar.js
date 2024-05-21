@@ -11,7 +11,7 @@ const NavBar = () => {
             to="about"
             spy={true}
             smooth={true}
-            offset={-70}
+            offset={0}
             duration={500}
             className="nav-brand display-1"
             style={{ textDecoration: "none", color: "inherit" }}
@@ -19,7 +19,12 @@ const NavBar = () => {
             Jack Gusler
           </Link>
           <h3>Software Engineer</h3>
-          <p>A little bio about myself...</p>
+          <p style={{
+            width: '65%'
+          }}>
+            A recent graduate seeking a software development position where I
+            can continue to grow as a developer and contribute to a team
+          </p>
         </div>
         <div className="content d-none d-md-block">
           <div style={{ width: "75px", textAlign: "left" }}>
@@ -28,7 +33,7 @@ const NavBar = () => {
               to="about"
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={0}
               duration={500}
               className="nav-link"
             >
@@ -39,7 +44,7 @@ const NavBar = () => {
               to="skills"
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={0}
               duration={500}
               className="nav-link"
             >
@@ -50,7 +55,7 @@ const NavBar = () => {
               to="projects"
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={0}
               duration={500}
               className="nav-link"
             >
