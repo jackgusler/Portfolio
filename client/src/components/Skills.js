@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import React from "react";
+import Marquee from "react-fast-marquee";
 
 const Skills = () => {
   const allSkills = [
@@ -38,99 +37,32 @@ const Skills = () => {
     { name: "Jira", logo: "https://simpleicons.org/icons/jira.svg" },
   ];
 
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2,
-    },
-  };
-
-  const carouselRef = useRef(null);
-
-  const onNextClick = () => {
-    carouselRef.current.next();
-  };
-
-  const onPrevClick = () => {
-    carouselRef.current.previous();
-  };
-
   return (
     <div id="skills" className="container pb-5">
-    <h2 className="pb-3 d-none d-md-block">Skills</h2>
+      <h2 className="pb-3 d-none d-md-block">Skills</h2>
       <div className="sticky-header-container">
         <h2 className="py-3 sticky-header d-block d-md-none">Skills</h2>
       </div>
-      <div
-        style={{
-          padding: "0 60px",
-          position: "relative",
-        }}
+      <Marquee
+        pauseOnHover={true}
+        gradient={true}
+        gradientWidth={175}
+        speed={40}
       >
-        <i
-          onClick={onPrevClick}
-          style={{
-            position: "absolute",
-            left: "10px",
-            top: "50%",
-            transform: "translateY(-50%)",
-            cursor: "pointer",
-          }}
-        >
-          <i className="fas fa-chevron-left fa-2x"></i>
-        </i>
-        <div className="carousel-container" style={{ maxWidth: "100%" }}>
-          <Carousel
-            responsive={responsive}
-            infinite={true}
-            ref={carouselRef}
-            showDots={false}
-            arrows={false}
-            removeArrowOnDeviceType={[
-              "tablet",
-              "mobile",
-              "desktop",
-              "superLargeDesktop",
-            ]}
+        {allSkills.map((skill, index) => (
+          <div
+            key={index}
+            className="d-flex flex-column align-items-center px-4"
           >
-            {allSkills.map((skill) => (
-              <div className="item">
-                <div className="d-flex flex-column align-items-center">
-                  <img
-                    src={skill.logo}
-                    style={{ width: "50px", height: "50px" }}
-                  />
-                  <h5>{skill.name}</h5>
-                </div>
-              </div>
-            ))}
-          </Carousel>
-        </div>
-        <i
-          onClick={onNextClick}
-          style={{
-            position: "absolute",
-            right: "10px",
-            top: "65%",
-            transform: "translateY(-50%)",
-            cursor: "pointer",
-          }}
-        >
-          <i className="fas fa-chevron-right fa-2x"></i>
-        </i>
-      </div>
+            <img
+              src={skill.logo}
+              alt={skill.name}
+              style={{ width: "50px", height: "50px" }}
+            />
+            <h5>{skill.name}</h5>
+          </div>
+        ))}
+      </Marquee>
     </div>
   );
 };
