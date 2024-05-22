@@ -11,8 +11,9 @@ const handleMouseLeave = (e) => {
 const Projects = () => {
   return (
     <div id="projects" className="container pb-5">
-      <div className="sticky-header">
-        <h2 className="pb-3">Projects</h2>
+    <h2 className="pb-3 d-none d-md-block">Projects</h2>
+      <div className="sticky-header-container">
+        <h2 className="py-3 sticky-header d-block d-md-none">Projects</h2>
       </div>
       <div className="row">
         <div className="col-12">

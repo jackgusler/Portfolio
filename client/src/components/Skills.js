@@ -69,8 +69,9 @@ const Skills = () => {
 
   return (
     <div id="skills" className="container pb-5">
-      <div className="sticky-header">
-        <h2 className="pb-3">Skills</h2>
+    <h2 className="pb-3 d-none d-md-block">Skills</h2>
+      <div className="sticky-header-container">
+        <h2 className="py-3 sticky-header d-block d-md-none">Skills</h2>
       </div>
       <div
         style={{

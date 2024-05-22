@@ -137,17 +137,49 @@ code {
   transform: scaleX(1);
 }
 
-.sticky-header {
-  position: -webkit-sticky;
+.sticky-header-container {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(2px); 
 }
 
-@media (min-width: 768px) {
-  .sticky-header {
-    position: static;
+.sticky-header {
+  position: relative;
+  text-indent: 24px;
+  left: -24px;
+  width: calc(100% + 48px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.ranger {
+  font-weight: bold;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0%;
   }
+  100% {
+    background-position: -100%;
+  }
+}
+
+.ranger:hover {
+  cursor: url("../public/nyr.png"), auto;
+  background: linear-gradient(
+    270deg,
+    #ce1126,
+    #ffffff,
+    #0038a8,
+    #ce1126,
+    #ffffff,
+    #0038a8,
+    #ce1126
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 0.5s linear infinite;
 }
