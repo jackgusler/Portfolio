@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 const NavBar = () => {
   return (
     <div className="d-flex flex-column justify-content-md-between min-vh-md-100 sticky-top">
-      <div>
+      <div className="container">
         <div className="header py-5">
           <Link
             activeClass="active"
@@ -19,11 +19,13 @@ const NavBar = () => {
             Jack Gusler
           </Link>
           <h3>Software Engineer</h3>
-          <p style={{
-            width: '65%'
-          }}>
+          <p
+            style={{
+              width: "65%",
+            }}
+          >
             A recent graduate seeking a software development position where I
-            can continue to grow as a developer and contribute to a team
+            can continue to grow as a developer and contribute to a team.
           </p>
         </div>
         <div className="content d-none d-md-block">
@@ -64,7 +66,7 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-      <div className="footer py-0 py-md-5">
+      <div className="container footer py-0 py-md-5">
         <a
           href="https://github.com/jackgusler"
           className="me-3"

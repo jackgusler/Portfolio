@@ -69,9 +69,9 @@ const Skills = () => {
 
   return (
     <div id="skills" className="container pb-5">
-      <h2 className="pb-3" style={{}}>
-        Skills
-      </h2>
+      <div className="sticky-header">
+        <h2 className="pb-3">Skills</h2>
+      </div>
       <div
         style={{
           padding: "0 60px",
