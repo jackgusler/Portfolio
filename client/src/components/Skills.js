@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 
 const Skills = () => {
@@ -37,6 +37,24 @@ const Skills = () => {
     { name: "Jira", logo: "https://simpleicons.org/icons/jira.svg" },
   ];
 
+  const [gradientWidth, setGradientWidth] = useState(175);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        // Adjust this to the breakpoint you want
+        setGradientWidth(100);
+      } else {
+        setGradientWidth(175);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call the function initially to set the gradient width based on the initial viewport width
+
+    return () => window.removeEventListener("resize", handleResize); // Clean up the event listener on component unmount
+  }, []);
+
   return (
     <div id="skills" className="container pb-5">
       <h2 className="pb-3 d-none d-md-block">Skills</h2>
@@ -46,7 +64,7 @@ const Skills = () => {
       <Marquee
         pauseOnHover={true}
         gradient={true}
-        gradientWidth={175}
+        gradientWidth={gradientWidth}
         speed={40}
       >
         {allSkills.map((skill, index) => (
