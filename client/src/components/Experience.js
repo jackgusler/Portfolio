@@ -1,11 +1,15 @@
 import React from "react";
 
 const handleMouseEnter = (e) => {
-  e.currentTarget.parentNode.parentNode.classList.add("card-hovered");
+  if (window.innerWidth > 768) {
+    e.currentTarget.parentNode.parentNode.classList.add("card-hovered");
+  }
 };
 
 const handleMouseLeave = (e) => {
-  e.currentTarget.parentNode.parentNode.classList.remove("card-hovered");
+  if (window.innerWidth > 768) {
+    e.currentTarget.parentNode.parentNode.classList.remove("card-hovered");
+  }
 };
 
 const Experience = () => {
