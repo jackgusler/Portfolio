@@ -58,6 +58,25 @@ const Skills = () => {
     return () => window.removeEventListener("resize", handleResize); // Clean up the event listener on component unmount
   }, []);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+        setGradientWidth(100);
+      } else {
+        setIsMobile(false);
+        setGradientWidth(175);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Call the function initially to set the gradient width based on the initial viewport width
+
+    return () => window.removeEventListener("resize", handleResize); // Clean up the event listener on component unmount
+  }, []);
+
   return (
     <div id="skills" className="container pb-5">
       <h2 className="pb-3 d-none d-md-block">Skills</h2>
@@ -65,7 +84,7 @@ const Skills = () => {
         <h2 className="py-3 sticky-header d-block d-md-none">Skills</h2>
       </div>
       <Marquee
-        pauseOnHover={true}
+        pauseOnHover={!isMobile}
         gradient={true}
         gradientWidth={gradientWidth}
         speed={40}
