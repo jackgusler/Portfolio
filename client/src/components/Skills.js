@@ -28,6 +28,9 @@ const Skills = () => {
       logo: "https://simpleicons.org/icons/amazondynamodb.svg",
     },
     { name: "Lambda", logo: "https://simpleicons.org/icons/awslambda.svg" },
+    // Deployment
+    { name: "Render", logo: "https://simpleicons.org/icons/render.svg" },
+    { name: "Vercel", logo: "https://simpleicons.org/icons/vercel.svg" },
     // Version Control
     { name: "Git", logo: "https://simpleicons.org/icons/git.svg" },
     { name: "GitHub", logo: "https://simpleicons.org/icons/github.svg" },

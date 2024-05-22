@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <div className="d-flex flex-column justify-content-md-between min-vh-md-100 sticky-top">
       <div className="container">
-        <div className="header py-5">
+        <div className="pt-5 py-md-0 py-md-5">
           <Link
             activeClass="active"
             to="about"
@@ -29,7 +29,7 @@ const NavBar = () => {
           </p>
         </div>
         <div className="content d-none d-md-block">
-          <div style={{ width: "75px", textAlign: "left" }}>
+          <div style={{ width: "100px", textAlign: "left" }}>
             <Link
               activeClass="active"
               to="about"
@@ -63,10 +63,21 @@ const NavBar = () => {
             >
               Projects
             </Link>
+            <Link
+              activeClass="active"
+              to="experience"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+              className="nav-link"
+            >
+              Experience
+            </Link>
           </div>
         </div>
       </div>
-      <div className="container footer py-0 py-md-5">
+      <div className="container py-0 py-md-5">
         <a
           href="https://github.com/jackgusler"
           className="me-3"

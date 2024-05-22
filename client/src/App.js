@@ -3,6 +3,8 @@ import Navbar from "./components/NavBar";
 import Skills from "./components/Skills";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -19,6 +21,8 @@ function App() {
             <About />
             <Skills />
             <Projects />
+            <Experience />
+            <Footer />
           </div>
         </div>
       </div>
