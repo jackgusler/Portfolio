@@ -259,12 +259,12 @@ p.dark {
 .sticky-top-switch {
   position: fixed;
   top: 1.2rem;
-  right: calc(var(--bs-gutter-x) * 0.5 + 2px);
+  right: calc(var(--bs-gutter-x) * 0.5 + 20px);
 }
 
 @media (min-width: 576px) {
   .sticky-top-switch {
-    right: calc((100vw - 540px) / 2 + var(--bs-gutter-x) * 0.5 - 10px);
+    right: calc((100vw - 540px) / 2 + var(--bs-gutter-x) * 0.5 + 10px);
   }
 }
 
@@ -301,17 +301,13 @@ p.dark {
 }
 
 .form-check-label.light {
-  width: 50px;
   text-align: right;
-  padding-right: 10px;
   user-select: none;
   color: #212529;
 }
 
 .form-check-label.dark {
-  width: 50px;
   text-align: right;
-  padding-right: 10px;
   user-select: none;
   color: #f8f9fa;
 }

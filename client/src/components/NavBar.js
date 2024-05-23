@@ -119,6 +119,21 @@ const NavBar = () => {
           </a>
         </div>
         <div className="form-check form-switch d-none d-md-block">
+          <label className={`form-check-label ${theme}`} htmlFor="themeSwitch">
+            <i
+              className="fas fa-sun"
+              style={{
+                position: "relative",
+                left: "-40px",
+              }}
+            ></i>
+            <i
+              className="fas fa-moon"
+              style={{
+                right: "18px",
+              }}
+            ></i>
+          </label>
           <input
             className="form-check-input"
             type="checkbox"
@@ -126,10 +141,11 @@ const NavBar = () => {
             checked={theme === "dark"}
             onChange={toggleTheme}
             role="switch"
+            style={{
+              position: "relative",
+              right: "-20px",
+            }}
           />
-          <label className={`form-check-label ${theme}`} htmlFor="themeSwitch">
-            {theme === "dark" ? "Light" : "Dark"}
-          </label>
         </div>
       </div>
     </div>

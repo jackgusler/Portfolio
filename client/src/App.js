@@ -45,6 +45,29 @@ export const App = () => {
             id="switch"
             className="form-check form-switch d-block d-md-none sticky-top-switch"
           >
+            <label
+              className={`form-check-label ${theme}`}
+              htmlFor="themeSwitch"
+            >
+              <i
+                className="fas fa-sun"
+                style={{
+                  position: "absolute",
+                  left: "-20px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                }}
+              ></i>
+              <i
+                className="fas fa-moon"
+                style={{
+                  position: "absolute",
+                  right: "-8px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                }}
+              ></i>
+            </label>
             <input
               className="form-check-input"
               type="checkbox"
@@ -53,12 +76,6 @@ export const App = () => {
               onChange={toggleTheme}
               role="switch"
             />
-            <label
-              className={`form-check-label ${theme}`}
-              htmlFor="themeSwitch"
-            >
-              {theme === "dark" ? "Light" : "Dark"}
-            </label>
           </div>
         </div>
         <div className="row">
