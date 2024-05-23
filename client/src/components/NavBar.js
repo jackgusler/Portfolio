@@ -5,6 +5,8 @@ import { ThemeContext } from "../context/ThemeContext";
 const NavBar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
+  const iconColor = theme === "dark" ? "white" : "black";
+
   return (
     <div className="d-flex flex-column justify-content-md-between min-vh-md-100 sticky-top">
       <div className="container">
@@ -88,7 +90,10 @@ const NavBar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fab fa-github fa-2x" style={{ color: "black" }}></i>
+            <i
+              className={`fab fa-github fa-2x`}
+              style={{ color: iconColor }}
+            ></i>
           </a>
           <a
             href="https://linkedin.com/in/jack-gusler"
@@ -96,13 +101,19 @@ const NavBar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fab fa-linkedin fa-2x" style={{ color: "black" }}></i>
+            <i
+              className={`fab fa-linkedin fa-2x`}
+              style={{ color: iconColor }}
+            ></i>
           </a>
           <a href="mailto:jackgusler16@gmail.com" className="me-3">
-            <i className="fas fa-envelope fa-2x" style={{ color: "black" }}></i>
+            <i
+              className={`fas fa-envelope fa-2x`}
+              style={{ color: iconColor }}
+            ></i>
           </a>
         </div>
-        {/* <div className="form-check form-switch">
+        <div className="form-check form-switch">
           <input
             className="form-check-input"
             type="checkbox"
@@ -114,7 +125,7 @@ const NavBar = () => {
           <label className="form-check-label" htmlFor="themeSwitch">
             {theme === "dark" ? "Light" : "Dark"}
           </label>
-        </div> */}
+        </div>
       </div>
     </div>
   );

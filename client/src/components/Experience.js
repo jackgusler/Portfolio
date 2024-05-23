@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const handleMouseEnter = (e) => {
   if (window.innerWidth > 768) {
@@ -13,6 +14,7 @@ const handleMouseLeave = (e) => {
 };
 
 const Experience = () => {
+  const { theme } = useContext(ThemeContext);
   return (
     <div id="experience" className="container pb-5">
       <h2 className="pb-3 d-none d-md-block">Experience</h2>
@@ -22,13 +24,13 @@ const Experience = () => {
       <div className="row">
         <div className="col-12">
           <div
-            className="card mb-4"
+            className={`card ${theme} mb-4`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <div className="card-body">
               <div className="d-flex align-items-center">
-                <h5 className="card-title">SMD Media</h5>
+                <h5 className={`card-title ${theme}`}>SMD Media</h5>
                 <img
                   src={process.env.PUBLIC_URL + "/smd2.png"}
                   alt="SMD Media Logo"
@@ -40,10 +42,10 @@ const Experience = () => {
                   }}
                 />
               </div>
-              <h6 className="card-subtitle mb-2 text-muted">
+              <h6 className={`card-subtitle ${theme} mb-2`}>
                 May 2023 — August 2023
               </h6>
-              <p className="card-text">
+              <p className={`card-text ${theme}`}>
                 I conducted comprehensive market research and analysis, which
                 supported the creation of effective marketing materials and
                 campaigns. My contributions to strategy development were
@@ -63,15 +65,15 @@ const Experience = () => {
         </div>
         <div className="col-12">
           <div
-            className="card"
+            className={`card ${theme}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             <div className="card-body">
               <div className="d-flex align-items-center">
-                <h5 className="card-title">LocalLive</h5>
+                <h5 className={`card-title ${theme}`}>LocalLive</h5>
                 <img
-                  src={process.env.PUBLIC_URL + "/locallive2.jpg"}
+                  src={process.env.PUBLIC_URL + "/locallive.png"}
                   alt="LocalLive Logo"
                   style={{
                     height: "2rem",
@@ -80,10 +82,10 @@ const Experience = () => {
                   }}
                 />
               </div>
-              <h6 className="card-subtitle mb-2 text-muted">
+              <h6 className={`card-subtitle ${theme} mb-2`}>
                 September 2023 — April 2024
               </h6>
-              <p className="card-text">
+              <p className={`card-text ${theme}`}>
                 Filmed and broadcasted live sport events, including middle
                 school, high school, and college, all from my desk. Produced
                 over 100 high-quality recordings, maintaining a 4.9/5-star

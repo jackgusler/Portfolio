@@ -26,12 +26,17 @@ code {
   }
 }
 
-a {
+a.light {
   color: black !important;
   text-decoration: none !important;
 }
 
-.card {
+a.dark {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.card.light {
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 10px;
@@ -39,8 +44,20 @@ a {
   transition: 0.3s;
 }
 
-.card:hover {
+.card.dark {
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.card.light:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card.dark:hover {
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
 }
 
 .card-hovered .card:not(:hover) {
@@ -51,14 +68,33 @@ a {
   padding: 20px;
 }
 
-.card-title {
+.card-title.light {
   color: #343a40;
   font-size: 24px;
   font-weight: bold;
 }
 
-.card-text {
+.card-title.dark {
+  color: #bebebe;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-subtitle.light {
   color: #6c757d;
+}
+
+.card-subtitle.dark {
+  color: #a9a9a9;
+}
+
+.card-text.light {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.card-text.dark {
+  color: #a9a9a9;
   font-size: 16px;
 }
 
