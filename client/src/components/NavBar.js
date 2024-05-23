@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-scroll";
+import { ThemeContext } from "../context/ThemeContext";
 
 const NavBar = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
     <div className="d-flex flex-column justify-content-md-between min-vh-md-100 sticky-top">
       <div className="container">
@@ -77,26 +80,41 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-      <div className="container py-0 py-md-5">
-        <a
-          href="https://github.com/jackgusler"
-          className="me-3"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-github fa-2x" style={{ color: "black" }}></i>
-        </a>
-        <a
-          href="https://linkedin.com/in/jack-gusler"
-          className="me-3"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-linkedin fa-2x" style={{ color: "black" }}></i>
-        </a>
-        <a href="mailto:jackgusler16@gmail.com" className="me-3">
-          <i className="fas fa-envelope fa-2x" style={{ color: "black" }}></i>
-        </a>
+      <div className="container py-0 py-md-5 d-flex justify-content-between align-items-center">
+        <div>
+          <a
+            href="https://github.com/jackgusler"
+            className="me-3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-github fa-2x" style={{ color: "black" }}></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/jack-gusler"
+            className="me-3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin fa-2x" style={{ color: "black" }}></i>
+          </a>
+          <a href="mailto:jackgusler16@gmail.com" className="me-3">
+            <i className="fas fa-envelope fa-2x" style={{ color: "black" }}></i>
+          </a>
+        </div>
+        <div className="form-check form-switch">
+          <input
+  className="form-check-input"
+  type="checkbox"
+  id="themeSwitch"
+  checked={theme === "dark"}
+  onChange={toggleTheme}
+  role="switch"
+/>
+<label className="form-check-label" htmlFor="themeSwitch">
+  {theme === "dark" ? "Light" : "Dark"}
+</label>
+        </div>
       </div>
     </div>
   );
