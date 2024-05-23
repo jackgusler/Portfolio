@@ -259,7 +259,7 @@ p.dark {
 .sticky-top-switch {
   position: fixed;
   top: 1.2rem;
-  right: calc(var(--bs-gutter-x) * 0.5 - 10px);
+  right: calc(var(--bs-gutter-x) * 0.5 + 2px);
 }
 
 @media (min-width: 576px) {
