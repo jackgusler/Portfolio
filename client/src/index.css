@@ -3,18 +3,26 @@
   font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  outline: none !important;
 }
 
 @supports (font-variation-settings: normal) {
   * {
     font-family: "InterVariable", sans-serif;
-    outline: none !important;
   }
 }
 
 code {
   font-family: "Inter", source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.app.light{
+  background-color: #f8f9fa;
+}
+
+.app.dark{
+  background-color: #121212;
 }
 
 @media (min-width: 768px) {
@@ -36,6 +44,32 @@ a.dark {
   text-decoration: none !important;
 }
 
+h2.light,
+h3.light {
+  color: #212529;
+}
+
+h2.dark,
+h3.dark {
+  color: #f8f9fa;
+}
+
+p.light {
+  color: #212529;
+}
+
+p.dark {
+  color: #f8f9fa;
+}
+
+.skill-name.light {
+  color: #212529;
+}
+
+.skill-name.dark {
+  color: #f8f9fa;
+}
+
 .card.light {
   padding: 20px;
   background-color: #f8f9fa;
@@ -46,9 +80,9 @@ a.dark {
 
 .card.dark {
   padding: 20px;
-  background-color: #333;
+  background-color: #282828; /* Lighten the background color */
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); /* Darken the box shadow color */
   transition: 0.3s;
 }
 
@@ -57,7 +91,7 @@ a.dark {
 }
 
 .card.dark:hover {
-  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
 }
 
 .card-hovered .card:not(:hover) {
@@ -69,15 +103,11 @@ a.dark {
 }
 
 .card-title.light {
-  color: #343a40;
-  font-size: 24px;
-  font-weight: bold;
+  color: #212529;
 }
 
 .card-title.dark {
-  color: #bebebe;
-  font-size: 24px;
-  font-weight: bold;
+  color: #f8f9fa;
 }
 
 .card-subtitle.light {
@@ -85,51 +115,76 @@ a.dark {
 }
 
 .card-subtitle.dark {
-  color: #a9a9a9;
+  color: #8B8B8B;
 }
 
 .card-text.light {
   color: #6c757d;
-  font-size: 16px;
 }
 
 .card-text.dark {
-  color: #a9a9a9;
-  font-size: 16px;
+  color: #8B8B8B;
 }
 
-.skill-tag {
+.skill-tag.light {
   display: inline-block;
   padding: 5px 10px;
   margin: 5px;
   border-radius: 50px;
   background-color: #bebebe;
-  color: #000000;
+  color: #212529;
   font-size: 14px;
   font-weight: bold;
 }
 
-.nav-brand,
-.nav-link {
+.skill-tag.dark {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 50px;
+  background-color: #515151;
+  color: #f8f9fa;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.nav-brand-dark,
+.nav-brand-light,
+.nav-link-dark,
+.nav-link-light {
   cursor: pointer;
 }
 
-.nav-link {
+.nav-brand-light {
+  color: #212529;
+}
+
+.nav-brand-dark {
+  color: #f8f9fa;
+}
+
+.nav-link-light {
   position: relative;
-  color: #333;
+  color: #212529;
   text-decoration: none;
-  padding: 10px 0;
   transition: color 0.3s;
 }
 
-.nav-link::before {
+.nav-link-dark {
+  position: relative;
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link-light::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000000;
+  background-color: #212529;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -137,17 +192,35 @@ a.dark {
   transition: all 0.3s ease-in-out 0s;
 }
 
-.nav-link:hover::before {
+.nav-link-dark::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f8f9fa;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link-dark:hover::before,
+.nav-link-light:hover::before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
-.nav-link.active {
+.nav-link-dark.active,
+.nav-link-light.active {
   font-weight: bold;
 }
 
-.nav-link.active::before {
+.nav-link-dark.active::before,
+.nav-link-light.active::before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
@@ -159,13 +232,35 @@ a.dark {
   z-index: 100;
 }
 
-.sticky-header {
+.sticky-header-light {
   position: relative;
   text-indent: 24px;
   left: -24px;
   width: calc(100% + 48px);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(248, 249, 250, 0.7);
   backdrop-filter: blur(2px);
+}
+
+.sticky-header-dark {
+  position: relative;
+  text-indent: 24px;
+  left: -24px;
+  width: calc(100% + 48px);
+  /* 121212 */
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.sticky-top-container {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.sticky-top-switch {
+  position: fixed;
+  top: 1.2rem;
+  right: 1rem;
 }
 
 .ranger {
@@ -200,11 +295,20 @@ a.dark {
   animation: gradient 0.5s linear infinite;
 }
 
-.form-check-label {
+.form-check-label.light {
   width: 50px;
   text-align: right;
   padding-right: 10px;
   user-select: none;
+  color: #212529;
+}
+
+.form-check-label.dark {
+  width: 50px;
+  text-align: right;
+  padding-right: 10px;
+  user-select: none;
+  color: #f8f9fa;
 }
 
 .form-check-input {
@@ -213,17 +317,17 @@ a.dark {
 
 .form-check-input,
 .form-check-input:focus {
-  border-color: #000000 !important;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23000000'/%3e%3c/svg%3e") !important;
+  border-color: #212529 !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23212529'/%3e%3c/svg%3e") !important;
 }
 
 .form-check-input:checked:focus::after {
   background-image: none !important;
-  background-color: #000000 !important;
+  background-color: #212529 !important;
 }
 
 .form-check-input:checked {
-  background-color: #000000 !important;
-  border-color: #000000 !important;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23ffffff'/%3e%3c/svg%3e") !important;
+  background-color: #313131 !important;
+  border-color: #f8f9fa !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23f8f9fa'/%3e%3c/svg%3e") !important;
 }

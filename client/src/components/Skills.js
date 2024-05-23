@@ -1,44 +1,66 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import Marquee from "react-fast-marquee";
 
+import { ReactComponent as JavaScript } from "../skills_logos/javascript.svg";
+import { ReactComponent as Python } from "../skills_logos/python.svg";
+import { ReactComponent as HTML } from "../skills_logos/html5.svg";
+import { ReactComponent as Vue } from "../skills_logos/vuedotjs.svg";
+import { ReactComponent as ReactLogo } from "../skills_logos/react.svg";
+import { ReactComponent as Bootstrap } from "../skills_logos/bootstrap.svg";
+import { ReactComponent as CSS } from "../skills_logos/css3.svg";
+import { ReactComponent as Node } from "../skills_logos/nodedotjs.svg";
+import { ReactComponent as Express } from "../skills_logos/express.svg";
+import { ReactComponent as Flask } from "../skills_logos/flask.svg";
+import { ReactComponent as MongoDB } from "../skills_logos/mongodb.svg";
+import { ReactComponent as SQLite } from "../skills_logos/sqlite.svg";
+import { ReactComponent as DynamoDB } from "../skills_logos/amazondynamodb.svg";
+import { ReactComponent as Lambda } from "../skills_logos/awslambda.svg";
+import { ReactComponent as Vercel } from "../skills_logos/vercel.svg";
+import { ReactComponent as Render } from "../skills_logos/render.svg";
+import { ReactComponent as Git } from "../skills_logos/git.svg";
+import { ReactComponent as GitHub } from "../skills_logos/github.svg";
+import { ReactComponent as GitKraken } from "../skills_logos/gitkraken.svg";
+import { ReactComponent as Postman } from "../skills_logos/postman.svg";
+import { ReactComponent as Jira } from "../skills_logos/jira.svg";
+
 const Skills = () => {
+  const { theme } = useContext(ThemeContext);
+  const color = theme === "dark" ? "white" : "black";
+
   const allSkills = [
     // Languages
-    {
-      name: "JavaScript",
-      logo: "https://simpleicons.org/icons/javascript.svg",
-    },
-    { name: "Python", logo: "https://simpleicons.org/icons/python.svg" },
-    { name: "HTML", logo: "https://simpleicons.org/icons/html5.svg" },
+    { name: "JavaScript", logo: JavaScript },
+    { name: "Python", logo: Python },
+    { name: "HTML", logo: HTML },
     // Frontend Frameworks
-    { name: "Vue.js", logo: "https://simpleicons.org/icons/vuedotjs.svg" },
-    { name: "React", logo: "https://simpleicons.org/icons/react.svg" },
-    { name: "Bootstrap", logo: "https://simpleicons.org/icons/bootstrap.svg" },
-    { name: "CSS", logo: "https://simpleicons.org/icons/css3.svg" },
+    { name: "Vue.js", logo: Vue },
+    { name: "React", logo: ReactLogo },
+    { name: "Bootstrap", logo: Bootstrap },
+    { name: "CSS", logo: CSS },
     // Backend Frameworks
-    { name: "Node.js", logo: "https://simpleicons.org/icons/nodedotjs.svg" },
-    { name: "Express", logo: "https://simpleicons.org/icons/express.svg" },
-    { name: "Flask", logo: "https://simpleicons.org/icons/flask.svg" },
+    { name: "Node.js", logo: Node },
+    { name: "Express", logo: Express },
+    { name: "Flask", logo: Flask },
     // Databases
-    { name: "MongoDB", logo: "https://simpleicons.org/icons/mongodb.svg" },
-    { name: "SQLite", logo: "https://simpleicons.org/icons/sqlite.svg" },
+    { name: "MongoDB", logo: MongoDB },
+    { name: "SQLite", logo: SQLite },
     // Cloud Services
-    {
-      name: "DynamoDB",
-      logo: "https://simpleicons.org/icons/amazondynamodb.svg",
-    },
-    { name: "Lambda", logo: "https://simpleicons.org/icons/awslambda.svg" },
+    { name: "DynamoDB", logo: DynamoDB },
+    { name: "Lambda", logo: Lambda },
     // Deployment
-    { name: "Render", logo: "https://simpleicons.org/icons/render.svg" },
-    { name: "Vercel", logo: "https://simpleicons.org/icons/vercel.svg" },
+    { name: "Vercel", logo: Vercel },
+    { name: "Render", logo: Render },
     // Version Control
-    { name: "Git", logo: "https://simpleicons.org/icons/git.svg" },
-    { name: "GitHub", logo: "https://simpleicons.org/icons/github.svg" },
-    // API Testing & Development
-    { name: "Postman", logo: "https://simpleicons.org/icons/postman.svg" },
-    // Group Organization
-    { name: "Jira", logo: "https://simpleicons.org/icons/jira.svg" },
+    { name: "Git", logo: Git },
+    { name: "GitHub", logo: GitHub },
+    { name: "GitKraken", logo: GitKraken },
+    // Tools
+    { name: "Postman", logo: Postman },
+    { name: "Jira", logo: Jira },
   ];
+
+  const gradientColor = theme === "dark" ? "#121212" : "#f8f9fa";
 
   const [gradientWidth, setGradientWidth] = useState(175);
 
@@ -79,29 +101,33 @@ const Skills = () => {
 
   return (
     <div id="skills" className="container pb-5">
-      <h2 className="pb-3 d-none d-md-block">Skills</h2>
-      <div className="sticky-header-container">
-        <h2 className="py-3 sticky-header d-block d-md-none">Skills</h2>
+      <h2 className={`${theme} pb-3 d-none d-md-block`}>Skills</h2>
+      <div className={`sticky-header-container ${theme}`}>
+        <h2
+          className={`${theme} py-3 sticky-header-${theme} d-block d-md-none`}
+        >
+          Skills
+        </h2>
       </div>
       <Marquee
         pauseOnHover={!isMobile}
         gradient={true}
+        gradientColor={gradientColor}
         gradientWidth={gradientWidth}
         speed={40}
       >
-        {allSkills.map((skill, index) => (
-          <div
-            key={index}
-            className="d-flex flex-column align-items-center px-4"
-          >
-            <img
-              src={skill.logo}
-              alt={skill.name}
-              style={{ width: "50px", height: "50px" }}
-            />
-            <h5>{skill.name}</h5>
-          </div>
-        ))}
+        {allSkills.map((skill, index) => {
+          const Logo = skill.logo;
+          return (
+            <div
+              key={index}
+              className="d-flex flex-column align-items-center px-4"
+            >
+              <Logo fill={color} style={{ width: "50px", height: "50px" }} />
+              <h5 className={`skill-name ${theme}`}>{skill.name}</h5>
+            </div>
+          );
+        })}
       </Marquee>
     </div>
   );

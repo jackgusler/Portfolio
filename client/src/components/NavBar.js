@@ -5,7 +5,7 @@ import { ThemeContext } from "../context/ThemeContext";
 const NavBar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  const iconColor = theme === "dark" ? "white" : "black";
+  const iconColor = theme === "dark" ? "#f8f9fa" : "#212529";
 
   return (
     <div className="d-flex flex-column justify-content-md-between min-vh-md-100 sticky-top">
@@ -18,13 +18,14 @@ const NavBar = () => {
             smooth={true}
             offset={0}
             duration={500}
-            className="nav-brand display-1"
-            style={{ textDecoration: "none", color: "inherit" }}
+            className={`nav-brand-${theme} display-1`}
+            style={{ textDecoration: "none" }}
           >
             Jack Gusler
           </Link>
-          <h3>Software Engineer</h3>
+          <h3 className={theme}>Software Engineer</h3>
           <p
+            className={theme}
             style={{
               width: "65%",
             }}
@@ -36,46 +37,50 @@ const NavBar = () => {
         <div className="content d-none d-md-block">
           <div style={{ width: "100px", textAlign: "left" }}>
             <Link
+              style={{ display: "block" }}
               activeClass="active"
               to="about"
               spy={true}
               smooth={true}
               offset={0}
-              duration={500}
-              className="nav-link"
+              duration={300}
+              className={`nav-link-${theme} mb-1`}
             >
               About
             </Link>
             <Link
+              style={{ display: "block" }}
               activeClass="active"
               to="skills"
               spy={true}
               smooth={true}
               offset={0}
-              duration={500}
-              className="nav-link"
+              duration={300}
+              className={`nav-link-${theme} mb-1`}
             >
               Skills
             </Link>
             <Link
+              style={{ display: "block" }}
               activeClass="active"
               to="projects"
               spy={true}
               smooth={true}
               offset={0}
-              duration={500}
-              className="nav-link"
+              duration={300}
+              className={`nav-link-${theme} mb-1`}
             >
               Projects
             </Link>
             <Link
+              style={{ display: "block" }}
               activeClass="active"
               to="experience"
               spy={true}
               smooth={true}
               offset={0}
-              duration={500}
-              className="nav-link"
+              duration={300}
+              className={`nav-link-${theme} mb-1`}
             >
               Experience
             </Link>
@@ -113,7 +118,7 @@ const NavBar = () => {
             ></i>
           </a>
         </div>
-        <div className="form-check form-switch">
+        <div className="form-check form-switch d-none d-md-block">
           <input
             className="form-check-input"
             type="checkbox"
@@ -122,7 +127,7 @@ const NavBar = () => {
             onChange={toggleTheme}
             role="switch"
           />
-          <label className="form-check-label" htmlFor="themeSwitch">
+          <label className={`form-check-label ${theme}`} htmlFor="themeSwitch">
             {theme === "dark" ? "Light" : "Dark"}
           </label>
         </div>

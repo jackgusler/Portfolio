@@ -17,9 +17,11 @@ const Experience = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div id="experience" className="container pb-5">
-      <h2 className="pb-3 d-none d-md-block">Experience</h2>
-      <div className="sticky-header-container">
-        <h2 className="py-3 sticky-header d-block d-md-none">Experience</h2>
+      <h2 className={`${theme} pb-3 d-none d-md-block`}>Experience</h2>
+      <div className={`sticky-header-container ${theme}`}>
+        <h2 className={`${theme} py-3 sticky-header-${theme} d-block d-md-none`}>
+          Experience
+        </h2>
       </div>
       <div className="row">
         <div className="col-12">
@@ -32,7 +34,7 @@ const Experience = () => {
               <div className="d-flex align-items-center">
                 <h5 className={`card-title ${theme}`}>SMD Media</h5>
                 <img
-                  src={process.env.PUBLIC_URL + "/smd2.png"}
+                  src={process.env.PUBLIC_URL + "/smd.png"}
                   alt="SMD Media Logo"
                   style={{
                     height: "2rem",

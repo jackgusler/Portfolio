@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <div id="footer" className="container pb-5">
-      <p className="pb-0 mb-0">
+      <p className={`pb-0 mb-0 ${theme}`}>
         Designed and developed by a passionate programmer, using{" "}
         <a
           className={theme}
@@ -67,7 +67,7 @@ const Footer = () => {
         >
           here
         </a>
-        .
+        . Thank you for stopping by!
       </p>
     </div>
   );
