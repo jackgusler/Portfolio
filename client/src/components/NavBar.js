@@ -102,19 +102,19 @@ const NavBar = () => {
             <i className="fas fa-envelope fa-2x" style={{ color: "black" }}></i>
           </a>
         </div>
-        <div className="form-check form-switch">
+        {/* <div className="form-check form-switch">
           <input
-  className="form-check-input"
-  type="checkbox"
-  id="themeSwitch"
-  checked={theme === "dark"}
-  onChange={toggleTheme}
-  role="switch"
-/>
-<label className="form-check-label" htmlFor="themeSwitch">
-  {theme === "dark" ? "Light" : "Dark"}
-</label>
-        </div>
+            className="form-check-input"
+            type="checkbox"
+            id="themeSwitch"
+            checked={theme === "dark"}
+            onChange={toggleTheme}
+            role="switch"
+          />
+          <label className="form-check-label" htmlFor="themeSwitch">
+            {theme === "dark" ? "Light" : "Dark"}
+          </label>
+        </div> */}
       </div>
     </div>
   );
