@@ -246,7 +246,6 @@ p.dark {
   text-indent: 24px;
   left: -24px;
   width: calc(100% + 48px);
-  /* 121212 */
   background: rgba(18, 18, 18, 0.7);
   backdrop-filter: blur(2px);
 }
@@ -260,7 +259,13 @@ p.dark {
 .sticky-top-switch {
   position: fixed;
   top: 1.2rem;
-  right: 1rem;
+  right: calc(var(--bs-gutter-x) * 0.5 - 10px);
+}
+
+@media (min-width: 576px) {
+  .sticky-top-switch {
+    right: calc((100vw - 540px) / 2 + var(--bs-gutter-x) * 0.5 - 10px);
+  }
 }
 
 .ranger {
@@ -327,7 +332,7 @@ p.dark {
 }
 
 .form-check-input:checked {
-  background-color: #313131 !important;
+  background-color: #121212 !important;
   border-color: #f8f9fa !important;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23f8f9fa'/%3e%3c/svg%3e") !important;
 }
