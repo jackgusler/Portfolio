@@ -19,7 +19,9 @@ const Experience = () => {
     <div id="experience" className="container pb-5">
       <h2 className={`${theme} pb-3 d-none d-md-block`}>Experience</h2>
       <div className={`sticky-header-container ${theme}`}>
-        <h2 className={`${theme} py-3 sticky-header-${theme} d-block d-md-none`}>
+        <h2
+          className={`${theme} py-3 sticky-header-${theme} d-block d-md-none`}
+        >
           Experience
         </h2>
       </div>
@@ -29,20 +31,30 @@ const Experience = () => {
             className={`card ${theme} mb-4`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() =>
+              window.open("https://www.smdmediaservices.com/", "_blank")
+            }
+            style={{ cursor: "pointer" }}
           >
             <div className="card-body">
               <div className="d-flex align-items-center">
-                <h5 className={`card-title ${theme}`}>SMD Media</h5>
                 <img
                   src={process.env.PUBLIC_URL + "/smd.png"}
                   alt="SMD Media Logo"
                   style={{
                     height: "2rem",
-                    marginLeft: "10px",
+                    marginRight: "10px",
                     position: "relative",
                     bottom: "10px",
                   }}
                 />
+                <h5 className={`card-title ${theme}`}>
+                  SMD Media
+                  <i
+                    className="fa-solid fa-link"
+                    style={{ fontSize: "0.8em", marginLeft: "0.5em" }}
+                  ></i>
+                </h5>
               </div>
               <h6 className={`card-subtitle ${theme} mb-2`}>
                 May 2023 — August 2023
@@ -67,22 +79,31 @@ const Experience = () => {
         </div>
         <div className="col-12">
           <div
-            className={`card ${theme}`}
+            className={`card ${theme} mb-4`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() => window.open("https://locallive.tv/", "_blank")}
+            style={{ cursor: "pointer" }}
           >
             <div className="card-body">
               <div className="d-flex align-items-center">
-                <h5 className={`card-title ${theme}`}>LocalLive</h5>
                 <img
                   src={process.env.PUBLIC_URL + "/locallive.png"}
                   alt="LocalLive Logo"
                   style={{
                     height: "2rem",
+                    marginRight: "10px",
                     position: "relative",
                     bottom: "10px",
                   }}
                 />
+                <h5 className={`card-title ${theme}`}>
+                  LocalLive
+                  <i
+                    className="fa-solid fa-link"
+                    style={{ fontSize: "0.8em", marginLeft: "0.5em" }}
+                  ></i>
+                </h5>
               </div>
               <h6 className={`card-subtitle ${theme} mb-2`}>
                 September 2023 — April 2024
