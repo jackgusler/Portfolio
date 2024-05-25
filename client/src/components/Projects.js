@@ -20,7 +20,9 @@ const Projects = () => {
     <div id="projects" className="container pb-5">
       <h2 className={`${theme} pb-3 d-none d-md-block`}>Projects</h2>
       <div className={`sticky-header-container ${theme}`}>
-        <h2 className={`${theme} py-3 sticky-header-${theme} d-block d-md-none`}>
+        <h2
+          className={`${theme} py-3 sticky-header-${theme} d-block d-md-none`}
+        >
           Projects
         </h2>
       </div>
@@ -30,10 +32,18 @@ const Projects = () => {
             className={`card ${theme} mb-4`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() =>
+              window.open("https://github.com/sunyhydralab/QView3D", "_blank")
+            }
+            style={{ cursor: "pointer" }}
           >
             <div className="card-body">
               <h5 className={`card-title ${theme}`}>
                 3D-Printer Queuing Software
+                <i
+                  className="fa-solid fa-link"
+                  style={{ fontSize: "0.8em", marginLeft: "0.5em" }}
+                ></i>
               </h5>
               <h6 className={`card-subtitle ${theme} mb-2`}>
                 January 2024 — May 2024
@@ -65,10 +75,18 @@ const Projects = () => {
             className={`card ${theme} mb-4`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() =>
+              window.open("https://github.com/jackgusler/BankTrace", "_blank")
+            }
+            style={{ cursor: "pointer" }}
           >
             <div className="card-body">
               <h5 className={`card-title ${theme}`}>
                 Budgeting Website Application
+                <i
+                  className="fa-solid fa-link"
+                  style={{ fontSize: "0.8em", marginLeft: "0.5em" }}
+                ></i>
               </h5>
               <h6 className={`card-subtitle ${theme} mb-2`}>
                 October 2023 — November 2023
@@ -97,9 +115,22 @@ const Projects = () => {
             className={`card ${theme}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={() =>
+              window.open(
+                "https://github.com/draktovus/pos-restaurant",
+                "_blank"
+              )
+            }
+            style={{ cursor: "pointer" }}
           >
             <div className="card-body">
-              <h5 className={`card-title ${theme}`}>Point of Sale System</h5>
+              <h5 className={`card-title ${theme}`}>
+                Point of Sale System
+                <i
+                  className="fa-solid fa-link"
+                  style={{ fontSize: "0.8em", marginLeft: "0.5em" }}
+                ></i>
+              </h5>
               <h6 className={`card-subtitle ${theme} mb-2`}>
                 January 2023 — May 2023
               </h6>
