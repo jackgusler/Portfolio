@@ -57,7 +57,7 @@ const Footer = () => {
         >
           Inter
         </a>{" "}
-        typeface. You can view my resume{" "}
+        typeface. You can view my résumé{" "}
         <a
           className={theme}
           href={process.env.PUBLIC_URL + "/Jack_Gusler_Resume.pdf"}
