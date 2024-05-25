@@ -82,7 +82,7 @@ const Projects = () => {
           >
             <div className="card-body">
               <h5 className={`card-title ${theme}`}>
-                Budgeting Website Application
+                Budgeting Application
                 <i
                   className="fa-solid fa-link"
                   style={{ fontSize: "0.8em", marginLeft: "0.5em" }}
