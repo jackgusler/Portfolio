@@ -60,7 +60,7 @@ const Footer = () => {
         typeface. You can view my résumé{" "}
         <a
           className={theme}
-          href={process.env.PUBLIC_URL + "/Jack_Gusler_Resume.pdf"}
+          href="https://drive.google.com/file/d/1AJ8LgA84D_R4wLefXSw1rUWbdWSEiPRH/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           style={{ fontWeight: "bold" }}
