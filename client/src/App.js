@@ -11,14 +11,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+const trackingId = "G-WXK5KQH3JQ";
+ReactGA.initialize(trackingId);
 
 export const App = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
-    
+
     const handleScroll = () => {
       const switchContainer = document.getElementById("switch");
       if (window.pageYOffset <= 2.8 * 16) {
