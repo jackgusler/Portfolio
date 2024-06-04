@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import ReactGA from 'react-ga';
 import { ThemeContext } from "./context/ThemeContext";
 import Navbar from "./components/NavBar";
 import Skills from "./components/Skills";
@@ -10,10 +11,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+
 export const App = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    
     const handleScroll = () => {
       const switchContainer = document.getElementById("switch");
       if (window.pageYOffset <= 2.8 * 16) {

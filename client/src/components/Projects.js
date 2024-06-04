@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import ReactGA from "react-ga";
 import { ThemeContext } from "../context/ThemeContext";
 
 const handleMouseEnter = (e) => {
@@ -15,6 +16,14 @@ const handleMouseLeave = (e) => {
 
 const Projects = () => {
   const { theme } = useContext(ThemeContext);
+
+  const handleProjectClick = (url, projectName) => {
+    ReactGA.event({
+      category: "Project",
+      action: `Clicked on ${projectName}`,
+    });
+    window.open(url, "_blank");
+  };
 
   return (
     <div id="projects" className="container pb-5">
@@ -33,7 +42,10 @@ const Projects = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={() =>
-              window.open("https://github.com/sunyhydralab/QView3D", "_blank")
+              handleProjectClick(
+                "https://github.com/sunyhydralab/QView3D",
+                "3D-Printer Queuing Software"
+              )
             }
             style={{ cursor: "pointer" }}
           >
@@ -76,7 +88,10 @@ const Projects = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={() =>
-              window.open("https://github.com/jackgusler/BankTrace", "_blank")
+              handleProjectClick(
+                "https://github.com/jackgusler/BankTrace",
+                "Budgeting Application"
+              )
             }
             style={{ cursor: "pointer" }}
           >
@@ -116,9 +131,9 @@ const Projects = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={() =>
-              window.open(
+              handleProjectClick(
                 "https://github.com/draktovus/pos-restaurant",
-                "_blank"
+                "Point of Sale System"
               )
             }
             style={{ cursor: "pointer" }}
