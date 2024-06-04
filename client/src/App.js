@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const trackingId = process.env.REACT_APP_GA_TRACKING_ID;
+const trackingId = "G-CZSCJ78HBF"
 ReactGA.initialize(trackingId);
 
 export const App = () => {
