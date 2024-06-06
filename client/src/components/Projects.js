@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { ThemeContext } from "../context/ThemeContext";
 
 const handleMouseEnter = (e) => {

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import { ThemeContext } from "./context/ThemeContext";
 import Navbar from "./components/NavBar";
 import Skills from "./components/Skills";
@@ -11,10 +11,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const trackingId = "G-CZSCJ78HBF"
-ReactGA.initialize(trackingId);
 
 export const App = () => {
+  const trackingId = "G-CZSCJ78HBF"
+  ReactGA.initialize(trackingId);
+  
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
