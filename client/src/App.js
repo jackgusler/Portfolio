@@ -19,8 +19,6 @@ export const App = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-
     const handleScroll = () => {
       const switchContainer = document.getElementById("switch");
       if (window.pageYOffset <= 2.8 * 16) {
