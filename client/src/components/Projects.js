@@ -170,6 +170,49 @@ const Projects = () => {
           </div>
         </div>
       </div>
+      <div className="small-projects-section mt-3">
+        <h3 className={`${theme}`}>More Projects</h3>
+        <div>
+          <div className="small-project">
+            <a
+              href="https://github.com/jackgusler/SoundBytes"
+              target="_blank"
+              className={`${theme}`}
+            >
+              BakkesMod Plugin
+              <i
+                className="fa-solid fa-link"
+                style={{
+                  fontSize: "0.8em",
+                  marginLeft: "0.5em",
+                  position: "relative",
+                  bottom: "2px",
+                }}
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div className="small-project">
+            <a
+              href="https://github.com/jackgusler/NonoSports"
+              target="_blank"
+              className={`${theme}`}
+            >
+              Sport Nonograms
+              <i
+                className="fa-solid fa-link"
+                style={{
+                  fontSize: "0.8em",
+                  marginLeft: "0.5em",
+                  position: "relative",
+                  bottom: "2px",
+                }}
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

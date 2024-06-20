@@ -338,6 +338,30 @@ p.dark {
   transition: transform 0.3s ease-in-out;
 }
 
-.card:hover .fa-link {
+.card:hover .fa-link,
+a:hover .fa-link{
   transform: rotate(180deg) scale(1.15);
+}
+
+.small-project {
+  position: relative;
+  display: inline-block; /* Ensure the pseudo-element aligns correctly */
+  overflow: hidden; /* Keeps the pseudo-element within the parent's bounds */
+}
+
+.small-project::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Start from the middle */
+  width: 0%; /* Initially hidden */
+  height: 2px; /* Thickness of the underline */
+  background-color: currentColor; /* Use the text color for the underline */
+  transition: all 0.3s ease; /* Smooth transition for the animation */
+  transform: translateX(-50%) scaleX(0); /* Start scaled to 0 from the center */
+}
+
+.small-project:hover::after {
+  width: 100%; /* Full width on hover */
+  transform: translateX(-50%) scaleX(1); /* Scale to full size from the center */
 }

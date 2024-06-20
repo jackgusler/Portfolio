@@ -5,9 +5,11 @@ import Marquee from "react-fast-marquee";
 import { ReactComponent as JavaScript } from "../skills_logos/javascript.svg";
 import { ReactComponent as Python } from "../skills_logos/python.svg";
 import { ReactComponent as HTML } from "../skills_logos/html5.svg";
+import { ReactComponent as Cplusplus } from "../skills_logos/cplusplus.svg";
 import { ReactComponent as Vue } from "../skills_logos/vuedotjs.svg";
 import { ReactComponent as ReactLogo } from "../skills_logos/react.svg";
 import { ReactComponent as Bootstrap } from "../skills_logos/bootstrap.svg";
+import { ReactComponent as Tailwind } from "../skills_logos/tailwindcss.svg";
 import { ReactComponent as CSS } from "../skills_logos/css3.svg";
 import { ReactComponent as Node } from "../skills_logos/nodedotjs.svg";
 import { ReactComponent as Express } from "../skills_logos/express.svg";
@@ -33,10 +35,12 @@ const Skills = () => {
     { name: "JavaScript", logo: JavaScript },
     { name: "Python", logo: Python },
     { name: "HTML", logo: HTML },
+    { name: "C++", logo: Cplusplus },
     // Frontend Frameworks
     { name: "Vue.js", logo: Vue },
     { name: "React", logo: ReactLogo },
     { name: "Bootstrap", logo: Bootstrap },
+    { name: "Tailwind", logo: Tailwind },
     { name: "CSS", logo: CSS },
     // Backend Frameworks
     { name: "Node.js", logo: Node },
