@@ -60,7 +60,7 @@ const Footer = () => {
         typeface. You can view my résumé{" "}
         <a
           className={theme}
-          href="https://drive.google.com/file/d/1AJ8LgA84D_R4wLefXSw1rUWbdWSEiPRH/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1q6e3N_ZTJJSnNxfG-BTesjD8pImG4oJU/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           style={{ fontWeight: "bold" }}
