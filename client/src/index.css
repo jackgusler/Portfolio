@@ -365,3 +365,10 @@ a:hover .fa-link{
   width: 100%; /* Full width on hover */
   transform: translateX(-50%) scaleX(1); /* Scale to full size from the center */
 }
+
+.small-project-link{
+  font-size: 0.8em;
+  margin-left: 0.5em;
+  position: relative;
+  bottom: 2px;
+}

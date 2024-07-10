@@ -22,7 +22,6 @@ import { ReactComponent as Vercel } from "../skills_logos/vercel.svg";
 import { ReactComponent as Render } from "../skills_logos/render.svg";
 import { ReactComponent as Git } from "../skills_logos/git.svg";
 import { ReactComponent as GitHub } from "../skills_logos/github.svg";
-import { ReactComponent as GitKraken } from "../skills_logos/gitkraken.svg";
 import { ReactComponent as Postman } from "../skills_logos/postman.svg";
 import { ReactComponent as Jira } from "../skills_logos/jira.svg";
 
@@ -58,7 +57,6 @@ const Skills = () => {
     // Version Control
     { name: "Git", logo: Git },
     { name: "GitHub", logo: GitHub },
-    { name: "GitKraken", logo: GitKraken },
     // Tools
     { name: "Postman", logo: Postman },
     { name: "Jira", logo: Jira },

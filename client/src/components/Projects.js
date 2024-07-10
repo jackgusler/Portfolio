@@ -43,6 +43,52 @@ const Projects = () => {
             onMouseLeave={handleMouseLeave}
             onClick={() =>
               handleProjectClick(
+                "https://github.com/jackgusler/ConcertSyncify",
+                "Concert Syncify"
+              )
+            }
+            style={{ cursor: "pointer" }}
+          >
+            <div className="card-body">
+              <h5 className={`card-title ${theme}`}>
+                Concert Syncify
+                <i
+                  className="fa-solid fa-link"
+                  style={{ fontSize: "0.8em", marginLeft: "0.5em" }}
+                ></i>
+              </h5>
+              <h6 className={`card-subtitle ${theme} mb-2`}>
+                June 2024 — July 2024
+              </h6>
+              <p className={`card-text ${theme}`}>
+                Developed a full-stack web application integrating Spotify,
+                Ticketmaster, and Google Calendar APIs to help users track and
+                manage upcoming concerts of their favorite artists or genres,
+                using Jira for project management and task tracking. Implemented
+                OAuth2 authentication for Spotify and Google, and managed user
+                sessions with JWT, ensuring secure data access. Designed a
+                responsive and interactive frontend with Vue.js and Bootstrap,
+                and created a backend API with Express to handle data fetching,
+                rate limiting, and error handling.
+              </p>
+              <div className="card-skills">
+                <span className={`skill-tag ${theme}`}>Vue.js</span>
+                <span className={`skill-tag ${theme}`}>Bootstrap</span>
+                <span className={`skill-tag ${theme}`}>Node.js</span>
+                <span className={`skill-tag ${theme}`}>Express.js</span>
+                <span className={`skill-tag ${theme}`}>AWS DynamoDB</span>
+                <span className={`skill-tag ${theme}`}>AWS Lambda</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-12">
+          <div
+            className={`card ${theme} mb-4`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={() =>
+              handleProjectClick(
                 "https://github.com/sunyhydralab/QView3D",
                 "3D-Printer Queuing Software"
               )
@@ -65,7 +111,7 @@ const Projects = () => {
                 Version control for software development for the Hudson Valley
                 Advanced Manufacturing Center. Designed using
                 Model-View-Controller pattern, integrating multi-threading and
-                web sockets for front-end to back-end communication for an array
+                web sockets for frontend to backend communication for an array
                 of 3D printers.
               </p>
               <div className="card-skills">
@@ -78,49 +124,6 @@ const Projects = () => {
                 <span className={`skill-tag ${theme}`}>GitHub</span>
                 <span className={`skill-tag ${theme}`}>Agile</span>
                 <span className={`skill-tag ${theme}`}>Scrum</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-12">
-          <div
-            className={`card ${theme} mb-4`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            onClick={() =>
-              handleProjectClick(
-                "https://github.com/jackgusler/BankTrace",
-                "Budgeting Application"
-              )
-            }
-            style={{ cursor: "pointer" }}
-          >
-            <div className="card-body">
-              <h5 className={`card-title ${theme}`}>
-                Budgeting Application
-                <i
-                  className="fa-solid fa-link"
-                  style={{ fontSize: "0.8em", marginLeft: "0.5em" }}
-                ></i>
-              </h5>
-              <h6 className={`card-subtitle ${theme} mb-2`}>
-                October 2023 — November 2023
-              </h6>
-              <p className={`card-text ${theme}`}>
-                Created a mobile budgeting application with user-friendly
-                functionalities for tracking expenses, setting goals, and
-                visualizing data. Integrated AWS DynamoDB to store and oversee
-                user data for the web-based platform, enhancing system
-                efficiency and performance, hosting it via AWS Lambda functions
-                for scalability and cost-effectiveness.
-              </p>
-              <div className="card-skills">
-                <span className={`skill-tag ${theme}`}>Vue.js</span>
-                <span className={`skill-tag ${theme}`}>Bulma</span>
-                <span className={`skill-tag ${theme}`}>Node.js</span>
-                <span className={`skill-tag ${theme}`}>Express.js</span>
-                <span className={`skill-tag ${theme}`}>AWS DynamoDB</span>
-                <span className={`skill-tag ${theme}`}>AWS Lambda</span>
               </div>
             </div>
           </div>
@@ -177,18 +180,11 @@ const Projects = () => {
             <a
               href="https://github.com/jackgusler/SoundBytes"
               target="_blank"
+              rel="noreferrer"
               className={`${theme}`}
             >
               BakkesMod Plugin
-              <i
-                className="fa-solid fa-link"
-                style={{
-                  fontSize: "0.8em",
-                  marginLeft: "0.5em",
-                  position: "relative",
-                  bottom: "2px",
-                }}
-              ></i>
+              <i className="fa-solid fa-link small-project-link"></i>
             </a>
           </div>
         </div>
@@ -197,18 +193,24 @@ const Projects = () => {
             <a
               href="https://github.com/jackgusler/NonoSports"
               target="_blank"
+              rel="noreferrer"
               className={`${theme}`}
             >
               Sport Nonograms
-              <i
-                className="fa-solid fa-link"
-                style={{
-                  fontSize: "0.8em",
-                  marginLeft: "0.5em",
-                  position: "relative",
-                  bottom: "2px",
-                }}
-              ></i>
+              <i className="fa-solid fa-link small-project-link"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div className="small-project">
+            <a
+              href="https://github.com/jackgusler/BankTrace"
+              target="_blank"
+              rel="noreferrer"
+              className={`${theme}`}
+            >
+              Bank Trace
+              <i className="fa-solid fa-link small-project-link"></i>
             </a>
           </div>
         </div>
